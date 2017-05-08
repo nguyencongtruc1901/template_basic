@@ -15,6 +15,7 @@ v6.9.1
 ## 3. Install Node packages
 
 $ npm install gulp -g
+
 $ npm install
 
 ## 4. Run Gulp
