@@ -16,6 +16,7 @@ v6.9.1
 
 $ npm install gulp -g
 $ npm install
-4. Run Gulp
+
+## 4. Run Gulp
 
 $ gulp
