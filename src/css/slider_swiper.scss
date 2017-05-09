@@ -1,0 +1,78 @@
+@charset 'utf-8';
+
+@import "../_scss/abstract/mixin";
+@import "../_scss/abstract/variable";
+
+.main_visual {
+  position: relative;
+  overflow: hidden;
+}
+.slider {
+  width: 960px;
+  overflow: visible;
+  height: 400px;
+  &_btn {
+    @media screen and (min-width: 768px) {
+      top: 22px;
+      height: 400px;
+    }
+  }
+  &_btn_prev {
+    background-position: 90% center;
+  }
+  &_btn_next {
+    background-position: 10% center;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: auto;
+    &_image {
+      width: 100%;
+      height: auto;
+    }
+    &_btn {
+      background-color: transparent;
+    }
+  }
+}
+.slider_thumnail {
+  .swiper-pagination-bullet {
+    width: 100px;
+    border-radius: 0;
+    height: 40px;
+    text-align: center;
+    opacity: 1;
+    text-indent: -99999px;
+    border: 2px solid $color-bg;
+    &:nth-child(1) {
+      background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide1) no-repeat 0 0;
+    }
+    &:nth-child(2) {
+      background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide2) no-repeat 0 0;
+    }
+    &:nth-child(3) {
+      background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide3) no-repeat 0 0;
+    }
+    &-active {
+      color:#fff;
+      border-color: $color-text;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .swiper-pagination-bullet {
+      width: 90px;
+      &:nth-child(1) {
+        background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide1) no-repeat 0 0;
+        background-size: 100% 100%;
+      }
+      &:nth-child(2) {
+        background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide2) no-repeat 0 0;
+        background-size: 100% 100%;
+      }
+      &:nth-child(3) {
+        background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide3) no-repeat 0 0;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}

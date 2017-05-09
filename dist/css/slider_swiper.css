@@ -1,0 +1,92 @@
+.main_visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  width: 960px;
+  overflow: visible;
+  height: 400px;
+}
+
+.slider_btn_prev {
+  background-position: 90% center;
+}
+
+.slider_btn_next {
+  background-position: 10% center;
+}
+
+.slider_thumnail .swiper-pagination-bullet {
+  width: 100px;
+  border-radius: 0;
+  height: 40px;
+  text-align: center;
+  opacity: 1;
+  text-indent: -99999px;
+  border: 2px solid #ffffff;
+}
+
+.slider_thumnail .swiper-pagination-bullet:nth-child(1) {
+  background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide1) no-repeat 0 0;
+}
+
+.slider_thumnail .swiper-pagination-bullet:nth-child(2) {
+  background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide2) no-repeat 0 0;
+}
+
+.slider_thumnail .swiper-pagination-bullet:nth-child(3) {
+  background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide3) no-repeat 0 0;
+}
+
+.slider_thumnail .swiper-pagination-bullet-active {
+  color: #fff;
+  border-color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+
+  .slider_btn {
+    top: 22px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .slider {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider_image {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider_btn {
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .slider_thumnail .swiper-pagination-bullet {
+    width: 90px;
+  }
+
+  .slider_thumnail .swiper-pagination-bullet:nth-child(1) {
+    background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide1) no-repeat 0 0;
+    background-size: 100% 100%;
+  }
+
+  .slider_thumnail .swiper-pagination-bullet:nth-child(2) {
+    background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide2) no-repeat 0 0;
+    background-size: 100% 100%;
+  }
+
+  .slider_thumnail .swiper-pagination-bullet:nth-child(3) {
+    background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide3) no-repeat 0 0;
+    background-size: 100% 100%;
+  }
+}
