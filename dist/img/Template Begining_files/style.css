@@ -75,14 +75,14 @@ img {
 ::before,
 ::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-          text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -94,8 +94,8 @@ body {
   font-weight: normal;
   color: #000000;
   -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-          text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   font-family: "游ゴシック", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -297,6 +297,10 @@ svg {
   padding: 15px;
 }
 
+.dropdown_list_item {
+  opacity: 0;
+}
+
 .dropdown_list_item:not(:last-child) {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 5px;
@@ -353,8 +357,8 @@ svg {
   border-style: solid;
   border-width: 0;
   -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
   border-top-width: 2px;
   border-right-width: 2px;
   right: 0;

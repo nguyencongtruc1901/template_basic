@@ -8,8 +8,8 @@
     <title>Template Begining</title>
     <link rel="shortcut icon" href="/img/favicon.ico">
     <meta name="format-detection" content="telephone=no">
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/style_sp.css" rel="stylesheet" media="screen and (max-width: 767px)">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style_sp.css" rel="stylesheet" media="screen and (max-width: 767px)">
     <link href="css/swiper.jquery.css" rel="stylesheet">
     <link href="css/slider_swiper.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -17,13 +17,13 @@
     <script src="js/swiper.jquery.min.js"></script>
     <script src="js/velocity.ui.js"></script>
     <script src="js/share.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/swiper_slider.js"></script>
   </head>
   <body>
     <header class="header">
       <div class="inner header_inner">
         <div class="header_logo">
-          <a class="header_logo_anchor"href="#"><img src="http://placehold.jp/3d4070/ffffff/200x100.png?text=LOGO" alt="LOGO DUMMY" width="100" height="50"></a>
+          <a class="header_logo_anchor"href="#"><img src="http://placehold.jp/2196F3/ffffff/160x80.png?text=LOGO" alt="LOGO DUMMY" width="80" height="40"></a>
         <!-- /.header_logo --></div>
         <div class="header_right">
           <button class="btn_menu" type="button" aria-pressed="false">
@@ -40,11 +40,11 @@
                 <a class="global_nav_anchor" href="#">News</a>
               </li>
               <li class="global_nav_item dropdown">
-                <a class="global_nav_anchor btn_accordion" aria-selected="false">
+                <a class="global_nav_anchor btn_accordion">
                   <span class="global_nav_text">Products</span>
                   <span class="global_nav_icon"></span>
                 </a>
-                <ul class="dropdown_list content_accordion" aria-expanded="false">
+                <ul class="dropdown_list content_accordion">
                   <li class="dropdown_list_item">
                     <a class="dropdown_list_anchor" href="#">Product 1</a>
                   </li>
@@ -53,6 +53,32 @@
                   </li>
                   <li class="dropdown_list_item">
                     <a class="dropdown_list_anchor" href="#">Product 3</a>
+                  </li>
+                  <li class="dropdown_list_item">
+                    <a class="dropdown_list_anchor" href="#">Product 4</a>
+                  </li>
+                  <li class="dropdown_list_item">
+                    <a class="dropdown_list_anchor" href="#">Product 5</a>
+                  </li>
+                  <li class="dropdown_list_item">
+                    <a class="dropdown_list_anchor" href="#">Product 6</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="global_nav_item dropdown">
+                <a class="global_nav_anchor btn_accordion">
+                  <span class="global_nav_text">Services</span>
+                  <span class="global_nav_icon"></span>
+                </a>
+                <ul class="dropdown_list content_accordion">
+                  <li class="dropdown_list_item">
+                    <a class="dropdown_list_anchor" href="#">Services 1</a>
+                  </li>
+                  <li class="dropdown_list_item">
+                    <a class="dropdown_list_anchor" href="#">Services 2</a>
+                  </li>
+                  <li class="dropdown_list_item">
+                    <a class="dropdown_list_anchor" href="#">Services 3</a>
                   </li>
                 </ul>
               </li>
@@ -71,21 +97,21 @@
             <div class="swiper-container slider">
               <div class="swiper-wrapper">
                 <div class="swiper-slide slider_item">
-                  <img class="slider_image pc_appear" src="/img/slider/img-slider_1.jpg" alt="" width="960" height="400">
-                  <img class="slider_image sp_appear" src="http://placehold.jp/eeeeee/3d4070/800x600.png?text=Slide1" alt="">
+                  <img class="slider_image pc_appear" src="img/slider/img-slider_1.jpg" alt="" width="960" height="400">
+                  <img class="slider_image sp_appear" src="http://placehold.jp/a5a5a5/ffffff/800x600.png?text=Slide1" alt="">
                 </div>
                 <div class="swiper-slide slider_item">
-                  <img class="slider_image pc_appear" src="/img/slider/img-slider_2.jpg" alt="" width="960" height="400">
-                  <img class="slider_image sp_appear" src="http://placehold.jp/eeeeee/3d4070/800x600.png?text=Slide1" alt="">
+                  <img class="slider_image pc_appear" src="img/slider/img-slider_2.jpg" alt="" width="960" height="400">
+                  <img class="slider_image sp_appear" src="http://placehold.jp/a5a5a5/ffffff/800x600.png?text=Slide1" alt="">
                 </div>
                 <div class="swiper-slide slider_item">
-                  <img class="slider_image pc_appear" src="/img/slider/img-slider_3.jpg" alt="" width="960" height="400">
-                  <img class="slider_image sp_appear" src="http://placehold.jp/eeeeee/3d4070/800x600.png?text=Slide1" alt="">
+                  <img class="slider_image pc_appear" src="img/slider/img-slider_3.jpg" alt="" width="960" height="400">
+                  <img class="slider_image sp_appear" src="http://placehold.jp/a5a5a5/ffffff/800x600.png?text=Slide1" alt="">
                 </div>
               </div>
               <div class="swiper-pagination slider_thumnail"></div>
-              <div class="swiper-button-prev slider_btn slider_btn_prev"></div>
-              <div class="swiper-button-next slider_btn slider_btn_next"></div>
+              <div class="slider_btn slider_btn_prev"></div>
+              <div class="slider_btn slider_btn_next"></div>
             <!-- /.slider --></div>
           <!-- /.main_wrapper --></div>
         <!-- /.main_visual --></div>
@@ -126,26 +152,11 @@
         <a class="global_nav_anchor" href="#">News</a>
       </li>
       <li class="global_nav_item dropdown">
-        <a class="global_nav_anchor" href="#">Products</a>
-        <ul class="dropdown_list">
-          <li class="dropdown_list_item">
-            <a class="dropdown_list_anchor" href="#">Product 1</a>
-          </li>
-          <li class="dropdown_list_item">
-            <a class="dropdown_list_anchor" href="#">Product 2</a>
-          </li>
-          <li class="dropdown_list_item">
-            <a class="dropdown_list_anchor" href="#">Product 3</a>
-          </li>
-          <li class="dropdown_list_item">
-            <a class="dropdown_list_anchor" href="#">Product 1</a>
-          </li>
-          <li class="dropdown_list_item">
-            <a class="dropdown_list_anchor" href="#">Product 2</a>
-          </li>
-          <li class="dropdown_list_item">
-            <a class="dropdown_list_anchor" href="#">Product 3</a>
-          </li>
+        <a class="global_nav_anchor btn_accordion">
+          <span class="global_nav_text">Products</span>
+          <span class="global_nav_icon"></span>
+        </a>
+        <ul class="dropdown_list content_accordion">
           <li class="dropdown_list_item">
             <a class="dropdown_list_anchor" href="#">Product 1</a>
           </li>
@@ -157,9 +168,26 @@
           </li>
         </ul>
       </li>
+      <li class="global_nav_item dropdown">
+        <a class="global_nav_anchor btn_accordion">
+          <span class="global_nav_text">Services</span>
+          <span class="global_nav_icon"></span>
+        </a>
+        <ul class="dropdown_list content_accordion">
+          <li class="dropdown_list_item">
+            <a class="dropdown_list_anchor" href="#">Services 1</a>
+          </li>
+          <li class="dropdown_list_item">
+            <a class="dropdown_list_anchor" href="#">Services 2</a>
+          </li>
+          <li class="dropdown_list_item">
+            <a class="dropdown_list_anchor" href="#">Services 3</a>
+          </li>
+        </ul>
+      </li>
       <li class="global_nav_item">
         <a class="global_nav_anchor" href="#">Contact</a>
       </li>
     </ul>
-  <!-- /.global_nav --></nav>
+  </nav>
 </html>

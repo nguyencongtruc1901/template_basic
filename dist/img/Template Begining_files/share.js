@@ -4,11 +4,10 @@
   var Share = $.share = (function () {
     var
       maxHeightArray = [],
-
+      maxHeightItem,
       $window = null,
       winWidth = 0,
       widthFlg = false,
-
       $dropDown = null,
       $dropDownList = null,
       $global_nav = null,
@@ -44,23 +43,21 @@
       smoothScroll();
       navFixed();
       loadPage();
+      closeMenu();
       menuButton();
-      getMaxHeightMenuAccordion();
+      getMaxHeight();
       accordioMenuSP();
 
       $window.on('resize', function () {
         winWidth = $window.width();
         widthFlg = (winWidth > 767) ? false : true;
         resetCSS();
-        getMaxHeightMenuAccordion();
+        getMaxHeight();
         accordioMenuSP();
       });
     }
 
-    // --------------------------------------
-    //  Get Max Height Menu Accordion
-    // --------------------------------------
-    function getMaxHeightMenuAccordion() {
+    function getMaxHeight() {
       $('.global_nav_item').each(function (index, el) {
         if(widthFlg) {
           var $this = $(this).find('.content_accordion');
@@ -101,7 +98,6 @@
           }
         }
       });
-      closeMenu();
     }
     // --------------------------------------
     //  Menu Pull
@@ -122,9 +118,7 @@
           .parent('html').removeAttr('style');;
       }
     }
-    // --------------------------------------
-    //  Close Menu
-    // --------------------------------------
+
     function closeMenu() {
       $('.overlay').on('click', function (e) {
         e.preventDefault();
@@ -137,13 +131,15 @@
       });
     }
     // --------------------------------------
-    //  Dropdown Menu
+    //  dropdown menu
     // --------------------------------------
     function dropdown() {
       $dropDown.off().on({
         'mouseenter': function () {
           if(!widthFlg) {
-            $(this).find($dropDownList).stop().velocity('fadeIn');
+            $(this).find($dropDownList).stop().velocity('fadeIn', 'fast', function () {
+              $('.dropdown_list_item').stop().velocity('transition.slideLeftIn');
+            });
           }
         },
         'mouseleave': function () {
@@ -154,15 +150,14 @@
         }
       });
     }
-    // --------------------------------------
-    //  Accordion Menu SP
-    // --------------------------------------
+
     function accordioMenuSP() {
       $('.global_nav_item').each(function (index, el) {
         var $item = $(this).find('.btn_accordion');
         var pos = $(this).index();
         if(widthFlg) {
           if(!$item.hasClass('active')) {
+            // console.log(aaa);
             $(this).find('.content_accordion').css('max-height', '0');
           } else {
             $item.next('.content_accordion').css({
@@ -192,7 +187,7 @@
     }
 
     // --------------------------------------
-    //  Content Load
+    //  content load
     // --------------------------------------
     function loadPage() {
       $('.effect').velocity("transition.slideLeftIn", {
@@ -201,9 +196,7 @@
         .delay(750);
     }
 
-    // --------------------------------------
-    //  Nav Fixed
-    // --------------------------------------
+    // Nav Fixed
     function navFixed() {
       $window.scroll(function () {
         var $header = $(".header");
@@ -220,9 +213,7 @@
         }
       });
     }
-    // --------------------------------------
-    //  Smooth Scroll
-    // --------------------------------------
+    // smoothScroll
     function smoothScroll() {
       var $footer = $('footer');
       // var heightHeader = $('.top_header').height();
@@ -238,9 +229,7 @@
         return false;
       });
     }
-    // --------------------------------------
-    //  Reset CSS
-    // --------------------------------------
+
     function resetCSS() {
       if(widthFlg) {
         $('.dropdown_list, .dropdown_list_item, .overlay, html').removeAttr('style');
@@ -249,9 +238,7 @@
       }
     }
 
-    // --------------------------------------
-    //  Remove Hover on SP
-    // --------------------------------------
+    // Remove hover on SP
     function removeHoverCSSRule() {
       if('createTouch' in document) {
         try {

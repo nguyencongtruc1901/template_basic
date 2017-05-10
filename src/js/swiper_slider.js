@@ -17,13 +17,12 @@
     }
 
     function Slider() {
-      setWidth();
       var mySwiper = $('.swiper-container').swiper({
         loop: true,
-        slidesPerView: "auto",
+        slidesPerView: 'auto',
         loopedSlides: 3,
         autoplay: 3000,
-        speed: 1000,
+        speed: 800,
         centeredSlides: true,
         nested: true,
         autoplayDisableOnInteraction: false,
@@ -47,45 +46,41 @@
         mySwiper.attachEvents();
       });
 
+      setWidthBackground();
+
       $(window).on('load resize', function () {
         winWidth = $window.width();
         widthFlg = (winWidth > 767) ? false : true;
-        if(winWidth <= 1024) {
+        if(winWidth <= 1044) {
           mySwiper.params.slidesPerView = 1;
           mySwiper.params.centeredSlides = false;
           $('.slider_btn_next').removeAttr('style');
           $('.slider_btn_prev').removeAttr('style');
+        } else {
+          setWidthBackground();
         }
         mySwiper.update()
+
       })
       $(window).trigger('load resize')
     }
 
-    function setWidth() {
-      $(window).on('load resize', function (e) {
-        e.preventDefault();
-        var heightSlider = $('.slider').height();
-        var thumbnail = $('.slider_thumnail').height();
-
-        var widthWrapper = $('.slider').width();
-        var widthWin = $(window).width();
-        var widthOverlay = (widthWin - widthWrapper) / 2;
-
-        $('.main_visual_wrapper').css('padding-bottom', thumbnail + 20);
-        $('.slider_thumnail').css('bottom', -(thumbnail + 20));
-
-        $('.slider_btn_next').css({
-          'width': widthOverlay,
-          'right': -widthOverlay,
-          'background-color': 'rgba(0, 0, 0, 0.3)'
-        })
-        $('.slider_btn_prev').css({
-          'width': widthOverlay,
-          'left': -widthOverlay,
-          'background-color': 'rgba(0, 0, 0, 0.3)'
-        })
-      });
+    function setWidthBackground() {
+      var widthWrapper = $('.slider').width();
+      var widthWin = $(window).width();
+      var widthOverlay = (widthWin - widthWrapper) / 2;
+      $('.slider_btn_next').css({
+        'width': widthOverlay,
+        'right': -widthOverlay,
+        'background-color': 'rgba(0, 0, 0, 0.3)'
+      })
+      $('.slider_btn_prev').css({
+        'width': widthOverlay,
+        'left': -widthOverlay,
+        'background-color': 'rgba(0, 0, 0, 0.3)'
+      })
     }
+
     return {
       init: init
     };

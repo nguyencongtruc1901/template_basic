@@ -167,15 +167,15 @@ body.body_pull {
 .btn_menu[aria-pressed="true"] .btn_menu_line::after {
   top: 0;
   -webkit-transform: rotateZ(315deg);
-      -ms-transform: rotate(315deg);
-          transform: rotateZ(315deg);
+  -ms-transform: rotate(315deg);
+  transform: rotateZ(315deg);
 }
 
 .btn_menu[aria-pressed="true"] .btn_menu_line::before {
   bottom: 0;
   -webkit-transform: rotateZ(-315deg);
-      -ms-transform: rotate(-315deg);
-          transform: rotateZ(-315deg);
+  -ms-transform: rotate(-315deg);
+  transform: rotateZ(-315deg);
 }
 
 .btn_menu_icon {
@@ -194,8 +194,8 @@ body.body_pull {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   height: 2px;
   width: 100%;
   background-color: #ffffff;
@@ -235,8 +235,8 @@ body.body_pull {
 
 .btn_accordion.active .global_nav_icon::after {
   -webkit-transform: rotateZ(270deg);
-      -ms-transform: rotate(270deg);
-          transform: rotateZ(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotateZ(270deg);
 }
 
 .global_nav_icon {

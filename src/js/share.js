@@ -3,13 +3,17 @@
 
   var Share = $.share = (function () {
     var
+      maxHeightArray = [],
+
       $window = null,
       winWidth = 0,
       widthFlg = false,
+
       $dropDown = null,
       $dropDownList = null,
       $global_nav = null,
       $menuButton = null,
+      $contentAccordion = null,
       $btnAccordion = null;
 
 
@@ -27,26 +31,44 @@
       $menuButton = $('.btn_menu');
       $global_nav = $('.global_nav');
       $btnAccordion = $('.btn_accordion');
+      $contentAccordion = $('.content_accordion');
+
+
 
       // --------------------------------------
       //  functions
       // --------------------------------------
+      removeHoverCSSRule();
       resetCSS();
       dropdown();
       smoothScroll();
       navFixed();
-      // loadPage();
-      closeMenu();
+      loadPage();
       menuButton();
-      accordion();
+      getMaxHeightMenuAccordion();
+      accordioMenuSP();
 
       $window.on('resize', function () {
         winWidth = $window.width();
         widthFlg = (winWidth > 767) ? false : true;
         resetCSS();
+        getMaxHeightMenuAccordion();
+        accordioMenuSP();
       });
     }
 
+    // --------------------------------------
+    //  Get Max Height Menu Accordion
+    // --------------------------------------
+    function getMaxHeightMenuAccordion() {
+      $('.global_nav_item').each(function (index, el) {
+        if(widthFlg) {
+          var $this = $(this).find('.content_accordion');
+          var maxHeightTemp = $this.height();
+          maxHeightArray.push(maxHeightTemp);
+        }
+      });
+    }
     // --------------------------------------
     //  button menu
     // --------------------------------------
@@ -79,6 +101,7 @@
           }
         }
       });
+      closeMenu();
     }
     // --------------------------------------
     //  Menu Pull
@@ -99,7 +122,9 @@
           .parent('html').removeAttr('style');;
       }
     }
-
+    // --------------------------------------
+    //  Close Menu
+    // --------------------------------------
     function closeMenu() {
       $('.overlay').on('click', function (e) {
         e.preventDefault();
@@ -112,15 +137,13 @@
       });
     }
     // --------------------------------------
-    //  dropdown menu
+    //  Dropdown Menu
     // --------------------------------------
     function dropdown() {
       $dropDown.off().on({
         'mouseenter': function () {
           if(!widthFlg) {
-            $(this).find($dropDownList).stop().velocity('fadeIn', 'fast', function () {
-              $('.dropdown_list_item').stop().velocity('transition.slideLeftIn');
-            });
+            $(this).find($dropDownList).stop().velocity('fadeIn');
           }
         },
         'mouseleave': function () {
@@ -131,16 +154,45 @@
         }
       });
     }
-
-    function accordion() {
-      $btnAccordion.each(function (index, el) {
-        $(this).attr('aria-selected', 'true');
-        console.log(1111);
+    // --------------------------------------
+    //  Accordion Menu SP
+    // --------------------------------------
+    function accordioMenuSP() {
+      $('.global_nav_item').each(function (index, el) {
+        var $item = $(this).find('.btn_accordion');
+        var pos = $(this).index();
+        if(widthFlg) {
+          if(!$item.hasClass('active')) {
+            $(this).find('.content_accordion').css('max-height', '0');
+          } else {
+            $item.next('.content_accordion').css({
+              'max-height': maxHeightArray[pos]
+            })
+          }
+          $item.off().on('click', function (e) {
+            e.preventDefault();
+            var $this = $(this);
+            $this.stop().toggleClass('active');
+            $this.parent().siblings()
+              .find('.btn_accordion').removeClass('active')
+              .next('.content_accordion').css('max-height', 0);
+            if($this.hasClass('active')) {
+              $this.next('.content_accordion').css({
+                'max-height': maxHeightArray[pos]
+              })
+            } else {
+              $this.removeClass('active');
+              $this.next('.content_accordion').css({
+                'max-height': '0'
+              })
+            }
+          });
+        }
       });
     }
 
     // --------------------------------------
-    //  content load
+    //  Content Load
     // --------------------------------------
     function loadPage() {
       $('.effect').velocity("transition.slideLeftIn", {
@@ -149,7 +201,9 @@
         .delay(750);
     }
 
-    // Nav Fixed
+    // --------------------------------------
+    //  Nav Fixed
+    // --------------------------------------
     function navFixed() {
       $window.scroll(function () {
         var $header = $(".header");
@@ -166,7 +220,9 @@
         }
       });
     }
-    // smoothScroll
+    // --------------------------------------
+    //  Smooth Scroll
+    // --------------------------------------
     function smoothScroll() {
       var $footer = $('footer');
       // var heightHeader = $('.top_header').height();
@@ -182,12 +238,40 @@
         return false;
       });
     }
-
+    // --------------------------------------
+    //  Reset CSS
+    // --------------------------------------
     function resetCSS() {
       if(widthFlg) {
         $('.dropdown_list, .dropdown_list_item, .overlay, html').removeAttr('style');
+      } else {
+        $('.content_accordion').removeAttr('style');
       }
     }
+
+    // --------------------------------------
+    //  Remove Hover on SP
+    // --------------------------------------
+    function removeHoverCSSRule() {
+      if('createTouch' in document) {
+        try {
+          var ignore = /:hover/;
+          for(var i = 0; i < document.styleSheets.length; i++) {
+            var sheet = document.styleSheets[i];
+            if(!sheet.cssRules) {
+              continue;
+            }
+            for(var j = sheet.cssRules.length - 1; j >= 0; j--) {
+              var rule = sheet.cssRules[j];
+              if(rule.type === CSSRule.STYLE_RULE && ignore.test(rule.selectorText)) {
+                sheet.deleteRule(j);
+              }
+            }
+          }
+        } catch(e) {}
+      }
+    }
+
     return {
       init: init
     };

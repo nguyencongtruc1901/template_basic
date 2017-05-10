@@ -37,15 +37,17 @@
   -webkit-transition: top $transition-accordion;
   -moz-transition: top $transition-accordion;
   &_inner {
-    padding: 15px 0;
+    height: inherit;
   }
   &_logo {
     float: left;
+    margin-top: 10px;
     &_anchor {
       display: inline-block;
     }
   }
   &_right {
+    height: inherit;
     float: right;
   }
   &.fixed {
@@ -58,18 +60,21 @@
 // --------------------------------------
 .global_nav {
   position: relative;
-  margin-top: 15px;
+  height: inherit;
   &_pull {
     display: none;
   }
   &_list {
     @include clearfix;
+    display: table;
+    height: inherit;
   }
   &_item {
-    float: left;
+    display: table-cell;
     position: relative;
+    vertical-align: middle;
     &:not(:last-child) {
-      margin-right: 50px;
+      padding-right: $padding-right-navigation;
     }
   }
   &_anchor {
@@ -78,24 +83,27 @@
     text-transform: uppercase;
     color: $color-sub;
     font-weight: $font-bold;
-    padding-bottom: 10px;
+  }
+  &_icon {
+    display: none;
   }
 }
 
 .dropdown {
   position: relative;
   &_list {
+    border-top: 3px solid $color-sub;
     display: none;
     position: absolute;
     z-index: 10;
     min-width: 200px;
+    top: 100%;
     left: 50%;
     right: 50%;
-    margin-left: -100px;
+    margin-left: -(200px / 2 + $padding-right-navigation / 2);
     background: $color-main;
     padding: 15px;
     &_item {
-      opacity: 0;
       &:not(:last-child) {
         border-bottom: 1px solid $color-border;
         padding-bottom: 5px;

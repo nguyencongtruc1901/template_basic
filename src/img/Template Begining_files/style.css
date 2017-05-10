@@ -297,6 +297,10 @@ svg {
   padding: 15px;
 }
 
+.dropdown_list_item {
+  opacity: 0;
+}
+
 .dropdown_list_item:not(:last-child) {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 5px;

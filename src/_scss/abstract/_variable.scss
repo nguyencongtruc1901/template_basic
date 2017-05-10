@@ -11,8 +11,8 @@ $font-family-base: '游ゴシック', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ
 // --------------------------------------
 //  base color
 // --------------------------------------
-$color-main: #0e106a;
-$color-sub: #2e32bf;
+$color-main: #1A237E;
+$color-sub: #2196F3;
 $color-text: #000000;
 $color-bg: #ffffff;
 
@@ -71,7 +71,7 @@ $size-site: 1024px;
 // --------------------------------------
 //  height
 // --------------------------------------
-$height-header-top-pc: 80px;
+$height-header-top-pc: 60px;
 $height-header-sp: 50px;
 
 // --------------------------------------
@@ -84,6 +84,7 @@ $margin-bottom-main-body-sp: 60px;
 //  padding
 // --------------------------------------
 $padding-offset-sp: 20px;
+$padding-right-navigation: 50px;
 
 // ==========================================================================
 // transition
