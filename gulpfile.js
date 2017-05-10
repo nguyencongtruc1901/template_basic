@@ -14,6 +14,7 @@
     jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
     pleeease = require('gulp-pleeease'),
+    del = require('del'),
     browser = require('browser-sync');
 
   // =============================================
@@ -98,11 +99,22 @@
         stream: true
       }));
   });
+  // =============================================
+  // Cleaning
+  //
+  gulp.task('clean', function () {
+    return del.sync('dist').then(function (cb) {
+      return cache.clearAll(cb);
+    });
+  })
 
+  gulp.task('clean:dist', function () {
+    return del.sync(['dist/**/*', '!dist/img', '!dist/img/**/*']);
+  });
   // =============================================
   // default
   //
-  gulp.task("default", ["html", "sass", "imagemin", "jshint", "server"], function () {
+  gulp.task("default", ["clean:dist", "html", "sass", "imagemin", "jshint", "server"], function () {
     gulp.watch([srcDir + "/**/*.scss"], ["sass"]);
     gulp.watch([srcDir + "/**/*.png", srcDir + "/**/*.jpg"], ["imagemin"]);
     gulp.watch([srcDir + "/**/*.js"], ["jshint"]);
