@@ -24,7 +24,6 @@
         autoplay: 3000,
         speed: 800,
         centeredSlides: true,
-        nested: true,
         autoplayDisableOnInteraction: false,
         runCallbacksOnInit: true,
         pagination: '.swiper-pagination',
@@ -57,12 +56,13 @@
           $('.slider_btn_next').removeAttr('style');
           $('.slider_btn_prev').removeAttr('style');
         } else {
+          mySwiper.params.slidesPerView = 'auto';
+          mySwiper.params.centeredSlides = true;
           setWidthBackground();
         }
-        mySwiper.update()
-
-      })
-      $(window).trigger('load resize')
+        mySwiper.update();
+      });
+      $(window).trigger('load resize');
     }
 
     function setWidthBackground() {
@@ -73,12 +73,12 @@
         'width': widthOverlay,
         'right': -widthOverlay,
         'background-color': 'rgba(0, 0, 0, 0.3)'
-      })
+      });
       $('.slider_btn_prev').css({
         'width': widthOverlay,
         'left': -widthOverlay,
         'background-color': 'rgba(0, 0, 0, 0.3)'
-      })
+      });
     }
 
     return {

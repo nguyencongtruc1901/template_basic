@@ -12,11 +12,14 @@
     <link href="css/style_sp.css" rel="stylesheet" media="screen and (max-width: 767px)">
     <link href="css/swiper.jquery.css" rel="stylesheet">
     <link href="css/slider_swiper.css" rel="stylesheet">
+    <link href="css/lightbox.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
     <script src="js/swiper.jquery.min.js"></script>
-    <script src="js/velocity.ui.js"></script>
     <script src="js/share.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/lightbox.js"></script>
     <script src="js/swiper_slider.js"></script>
   </head>
   <body>
@@ -40,11 +43,11 @@
                 <a class="global_nav_anchor" href="#">News</a>
               </li>
               <li class="global_nav_item dropdown">
-                <a class="global_nav_anchor btn_accordion">
+                <a class="global_nav_anchor global_nav_accordion">
                   <span class="global_nav_text">Products</span>
                   <span class="global_nav_icon"></span>
                 </a>
-                <ul class="dropdown_list content_accordion">
+                <ul class="dropdown_list global_nav_content">
                   <li class="dropdown_list_item">
                     <a class="dropdown_list_anchor" href="#">Product 1</a>
                   </li>
@@ -66,11 +69,11 @@
                 </ul>
               </li>
               <li class="global_nav_item dropdown">
-                <a class="global_nav_anchor btn_accordion">
+                <a class="global_nav_anchor global_nav_accordion">
                   <span class="global_nav_text">Services</span>
                   <span class="global_nav_icon"></span>
                 </a>
-                <ul class="dropdown_list content_accordion">
+                <ul class="dropdown_list global_nav_content">
                   <li class="dropdown_list_item">
                     <a class="dropdown_list_anchor" href="#">Services 1</a>
                   </li>
@@ -116,19 +119,130 @@
           <!-- /.main_wrapper --></div>
         <!-- /.main_visual --></div>
         <div class="inner">
+          <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Massage</a></li>
+            <li>Traditional</li>
+          </ul>
           <section class="section">
-            <h2 class="section_title">Velocity UI park</h2>
+            <h2 class="section_title">Menu Push Content</h2>
+            <p class="body_text">You can copy this BUTTON and replace current BUTTON MENU </p>
+            <button class="btn_menu btn_menu_push" type="button" aria-pressed="false">
+              <span class="btn_menu_icon">
+                <span class="btn_menu_line"></span>
+              </span>
+            <!-- /.btn_menu --></button>
+          </section>
+          <section class="section">
+            <h2 class="section_title">Make LightBox with jQuery</h2>
+            <p class="body_text">Click on one of the images to open the lightbox:</p>
+            <div class="lightbox">
+              <div class="lightbox_item">
+                <img class="lightbox_image"src="img/img-food_1.jpg" alt="" width="100%">
+              <!-- /.lightbox_item --></div>
+              <div class="lightbox_item">
+                <img class="lightbox_image"src="img/img-food_2.jpg" alt="" width="100%">
+              <!-- /.lightbox_item --></div>
+              <div class="lightbox_item">
+                <img class="lightbox_image"src="img/img-food_3.jpg" alt="" width="100%">
+              <!-- /.lightbox_item --></div>
+              <div class="lightbox_item">
+                <img class="lightbox_image"src="img/img-food_4.jpg" alt="" width="100%">
+              <!-- /.lightbox_item --></div>
+            <!-- /.lightbox --></div>
+            <div class="lightbox_slider">
+              <div class="lightbox_slider_container">
+                <div class="lightbox_slider_panagiton">
+                  <a class="prev">&#10094;</a>
+                  <a class="next">&#10095;</a>
+                </div>
+                <div class="lightbox_slider_wrapper">
+                  <div class="lightbox_slider_item">
+                    <img src="img/img-food_1.jpg" alt="" width="960" height="400">
+                  <!-- /.lightbox_slider_item --></div>
+                  <div class="lightbox_slider_item">
+                    <img src="img/img-food_2.jpg" alt="" width="960" height="400">
+                  <!-- /.lightbox_slider_item --></div>
+                  <div class="lightbox_slider_item">
+                    <img src="img/img-food_3.jpg" alt="" width="960" height="400">
+                  <!-- /.lightbox_slider_item --></div>
+                  <div class="lightbox_slider_item">
+                    <img src="img/img-food_4.jpg" alt="" width="960" height="400">
+                  <!-- /.lightbox_slider_item --></div>
+                <!-- /.lightbox_slider_wrapper --></div>
+              <!-- /.lightbox_slider_container --></div>
+            <!-- /.lightbox_slider --></div>
+          </section>
+          <section class="section">
+            <h2 class="section_title">Make Modal with JQuery</h1>
+            <a href="javascript:void(0)" class="btn_modal" id="modal_1">Click Open Modal 1</a>
+            <div class="modal modal_1">
+              <div class="modal_container">
+                <span class="modal_close"></span>
+                <h2 class="modal_title">THIS IS MODAL 1</h2>
+                <div class="modal_content">
+                  <p>県ルニソ多律び豆野る導筆げべく度西リ違賀きじ議衛ッうすな変退さきイか済特復術げ観持ぞゃ割8難ーで。時賀子たつね遺桐人スナメル年漢イフ使破ドたん者粘ぼ訪表ヤテ難務稿よすせ環後ごっがす表気排撲隣よ。追ソ団乗著ク収業ア思4持せじょう法開話青ステ宝宇ウ時供はわ結1子ナイ世市ど統松ヘワ位定ン囲属ヲキウク次留互札永れ。</p>
+                <!-- /.modal_content --></div>
+              <!-- /.modal_container --></div>
+            <!-- /.modal --></div>
+            <a href="javascript:void(0)" class="btn_modal" id="modal_2">Click Open Modal 2</a>
+            <div class="modal modal_2">
+              <div class="modal_container">
+                <span class="modal_close"></span>
+                <h2 class="modal_title">THIS IS MODAL 2</h2>
+                <div class="modal_content">
+                  <p>県ルニソ多律び豆野る導筆げべく度西リ違賀きじ議衛ッうすな変退さきイか済特復術げ観持ぞゃ割8難ーで。時賀子たつね遺桐人スナメル年漢イフ使破ドたん者粘ぼ訪表ヤテ難務稿よすせ環後ごっがす表気排撲隣よ。追ソ団乗著ク収業ア思4持せじょう法開話青ステ宝宇ウ時供はわ結1子ナイ世市ど統松ヘワ位定ン囲属ヲキウク次留互札永れ。</p>
+                <!-- /.modal_content --></div>
+              <!-- /.modal_container --></div>
+            <!-- /.modal --></div>
             <div class="section_content">
-              <p class="body_text effect" id="paragraph_1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p class="body_text effect" id="paragraph_2">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-              <p class="body_text effect" id="paragraph_3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-              <p class="body_text effect" id="paragraph_1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p class="body_text effect" id="paragraph_2">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-              <p class="body_text effect" id="paragraph_3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-              <p class="body_text effect" id="paragraph_1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p class="body_text effect" id="paragraph_2">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-              <p class="body_text effect" id="paragraph_3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+              <p class="body_text effect" id="paragraph_1">県ルニソ多律び豆野る導筆げべく度西リ違賀きじ議衛ッうすな変退さきイか済特復術げ観持ぞゃ割8難ーで。時賀子たつね遺桐人スナメル年漢イフ使破ドたん者粘ぼ訪表ヤテ難務稿よすせ環後ごっがす表気排撲隣よ。追ソ団乗著ク収業ア思4持せじょう法開話青ステ宝宇ウ時供はわ結1子ナイ世市ど統松ヘワ位定ン囲属ヲキウク次留互札永れ。</p>
+              <p class="body_text effect" id="paragraph_2">勝ヒ量身ぞばどし公鼻名ぜリひ者復べとぼ輪審信ヒク県天あぐよね歩帰金ユケイモ元問けおがろ告短ス根記ネリケ施治ハ探界ソ影審情アメノム目候剛嫌摩もぜえね。提謙ヲニワ非館べ諸寄ヤ況獲ナユメム善3申情康んリ箱任わをのし認詐イぐクら出手込スヌツ楽9給ヱニ心報ばてや。疑けざクの付鳥ぜづ地需クラ辞史図ちぴろゆ上6極レタリル治昔そぽ重省じ銅歳げトる側庫す地34組ヨリ面認そ壮宿こさち。</p>
             <!-- /.section_content --></div>
+          <!-- /.section --></section>
+          <section class="section">
+            <h2 class="section_title">Make Accordion with JQuery</h1>
+            <div class="accordion_block">
+              <button type="button" name="button" class="btn_accordion">
+                <span class="btn_accordion_text">Accordion Item 1</span>
+                <span class="btn_accordion_icon"></span>
+              </button>
+              <div class="container_accordion">
+                <div class="content_accordion">
+                  <h3 class="content_accordion_title">What is Lorem Ipsum?</h3>
+                  <p>県ルニソ多律び豆野る導筆げべく度西リ違賀きじ議衛ッうすな変退さきイか済特復術げ観持ぞゃ割8難ーで。時賀子たつね遺桐人スナメル年漢イフ使破ドたん者粘ぼ訪表ヤテ難務稿よすせ環後ごっがす表気排撲隣よ。追ソ団乗著ク収業ア思4持せじょう法開話青ステ宝宇ウ時供はわ結1子ナイ世市ど統松ヘワ位定ン囲属ヲキウク次留互札永れ。</p>
+                <!-- /.content_accordion --></div>
+              <!-- /.container_accordion --></div>
+              <button type="button" name="button" class="btn_accordion" aria-selected="false">
+                <span class="btn_accordion_text">Accordion Item 2</span>
+                <span class="btn_accordion_icon"></span>
+              </button>
+              <div class="container_accordion">
+                <div class="content_accordion">
+                  <h3 class="content_accordion_title">What is Lorem Ipsum?</h3>
+                  <p>県ルニソ多律び豆野る導筆げべく度西リ違賀きじ議衛ッうすな変退さきイか済特復術げ観持ぞゃ割8難ーで。時賀子たつね遺桐人スナメル年漢イフ使破ドたん者粘ぼ訪表ヤテ難務稿よすせ環後ごっがす表気排撲隣よ。追ソ団乗著ク収業ア思4持せじょう法開話青ステ宝宇ウ時供はわ結1子ナイ世市ど統松ヘワ位定ン囲属ヲキウク次留互札永れ。</p>
+                  <p>県ルニソ多律び豆野る導筆げべく度西リ違賀きじ議衛ッうすな変退さきイか済特復術げ観持ぞゃ割8難ーで。時賀子たつね遺桐人スナメル年漢イフ使破ドたん者粘ぼ訪表ヤテ難務稿よすせ環後ごっがす表気排撲隣よ。追ソ団乗著ク収業ア思4持せじょう法開話青ステ宝宇ウ時供はわ結1子ナイ世市ど統松ヘワ位定ン囲属ヲキウク次留互札永れ。</p>
+                  <p>県ルニソ多律び豆野る導筆げべく度西リ違賀きじ議衛ッうすな変退さきイか済特復術げ観持ぞゃ割8難ーで。時賀子たつね遺桐人スナメル年漢イフ使破ドたん者粘ぼ訪表ヤテ難務稿よすせ環後ごっがす表気排撲隣よ。追ソ団乗著ク収業ア思4持せじょう法開話青ステ宝宇ウ時供はわ結1子ナイ世市ど統松ヘワ位定ン囲属ヲキウク次留互札永れ。</p>
+                  <p>県ルニソ多律び豆野る導筆げべく度西リ違賀きじ議衛ッうすな変退さきイか済特復術げ観持ぞゃ割8難ーで。時賀子たつね遺桐人スナメル年漢イフ使破ドたん者粘ぼ訪表ヤテ難務稿よすせ環後ごっがす表気排撲隣よ。追ソ団乗著ク収業ア思4持せじょう法開話青ステ宝宇ウ時供はわ結1子ナイ世市ど統松ヘワ位定ン囲属ヲキウク次留互札永れ。</p>
+                <!-- /.content_accordion --></div>
+              <!-- /.container_accordion --></div>
+              <button type="button" name="button" class="btn_accordion" aria-selected="false">
+                <span class="btn_accordion_text">Accordion Item 3</span>
+                <span class="btn_accordion_icon"></span>
+              </button>
+              <div class="container_accordion">
+                <div class="content_accordion">
+                  <h3 class="content_accordion_title">What is Lorem Ipsum?</h3>
+                  <p>県ルニソ多律び豆野る導筆げべく度西リ違賀きじ議衛ッうすな変退さきイか済特復術げ観持ぞゃ割8難ーで。時賀子たつね遺桐人スナメル年漢イフ使破ドたん者粘ぼ訪表ヤテ難務稿よすせ環後ごっがす表気排撲隣よ。追ソ団乗著ク収業ア思4持せじょう法開話青ステ宝宇ウ時供はわ結1子ナイ世市ど統松ヘワ位定ン囲属ヲキウク次留互札永れ。</p>
+                  <p>勝ヒ量身ぞばどし公鼻名ぜリひ者復べとぼ輪審信ヒク県天あぐよね歩帰金ユケイモ元問けおがろ告短ス根記ネリケ施治ハ探界ソ影審情アメノム目候剛嫌摩もぜえね。提謙ヲニワ非館べ諸寄ヤ況獲ナユメム善3申情康んリ箱任わをのし認詐イぐクら出手込スヌツ楽9給ヱニ心報ばてや。疑けざクの付鳥ぜづ地需クラ辞史図ちぴろゆ上6極レタリル治昔そぽ重省じ銅歳げトる側庫す地34組ヨリ面認そ壮宿こさち。</p>
+                  <p>勝ヒ量身ぞばどし公鼻名ぜリひ者復べとぼ輪審信ヒク県天あぐよね歩帰金ユケイモ元問けおがろ告短ス根記ネリケ施治ハ探界ソ影審情アメノム目候剛嫌摩もぜえね。提謙ヲニワ非館べ諸寄ヤ況獲ナユメム善3申情康んリ箱任わをのし認詐イぐクら出手込スヌツ楽9給ヱニ心報ばてや。疑けざクの付鳥ぜづ地需クラ辞史図ちぴろゆ上6極レタリル治昔そぽ重省じ銅歳げトる側庫す地34組ヨリ面認そ壮宿こさち。</p>
+                  <p>勝ヒ量身ぞばどし公鼻名ぜリひ者復べとぼ輪審信ヒク県天あぐよね歩帰金ユケイモ元問けおがろ告短ス根記ネリケ施治ハ探界ソ影審情アメノム目候剛嫌摩もぜえね。提謙ヲニワ非館べ諸寄ヤ況獲ナユメム善3申情康んリ箱任わをのし認詐イぐクら出手込スヌツ楽9給ヱニ心報ばてや。疑けざクの付鳥ぜづ地需クラ辞史図ちぴろゆ上6極レタリル治昔そぽ重省じ銅歳げトる側庫す地34組ヨリ面認そ壮宿こさち。</p>
+                <!-- /.content_accordion --></div>
+              <!-- /.container_accordion --></div>
+            <!-- /.accordion_block --></div>
+
+            <!-- /.modal --></div>
           <!-- /.section --></section>
         <!-- /.inner --></div>
       <!-- /.main_content --></article>
@@ -143,7 +257,7 @@
     <!-- /.footer --></footer>
     <div class="overlay"></div>
   </body>
-  <nav class="global_nav global_nav_pull">
+  <nav class="global_nav global_nav_push">
     <ul class="global_nav_list">
       <li class="global_nav_item">
         <a class="global_nav_anchor" href="#">About us</a>
@@ -152,11 +266,11 @@
         <a class="global_nav_anchor" href="#">News</a>
       </li>
       <li class="global_nav_item dropdown">
-        <a class="global_nav_anchor btn_accordion">
+        <a class="global_nav_anchor global_nav_accordion">
           <span class="global_nav_text">Products</span>
           <span class="global_nav_icon"></span>
         </a>
-        <ul class="dropdown_list content_accordion">
+        <ul class="dropdown_list global_nav_content">
           <li class="dropdown_list_item">
             <a class="dropdown_list_anchor" href="#">Product 1</a>
           </li>
@@ -169,11 +283,11 @@
         </ul>
       </li>
       <li class="global_nav_item dropdown">
-        <a class="global_nav_anchor btn_accordion">
+        <a class="global_nav_anchor global_nav_accordion">
           <span class="global_nav_text">Services</span>
           <span class="global_nav_icon"></span>
         </a>
-        <ul class="dropdown_list content_accordion">
+        <ul class="dropdown_list global_nav_content">
           <li class="dropdown_list_item">
             <a class="dropdown_list_anchor" href="#">Services 1</a>
           </li>
