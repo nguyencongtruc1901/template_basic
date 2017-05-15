@@ -28,6 +28,9 @@
     z-index: 2000;
     transform: translateY(-50%);
     visibility: hidden;
+    @include device('sp') {
+      width: 100%;
+    }
     &.lightbox_slider_show {
       visibility: visible;
     }
@@ -46,7 +49,7 @@
     &_container {
       transform: scale(0.7);
       @include clearfix;
-      width: 960px;
+      width: inherit;
       position: relative;
       margin: 0 auto;
       opacity: 0;

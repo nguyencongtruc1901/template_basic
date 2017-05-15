@@ -140,7 +140,7 @@ body.body_push {
 }
 
 .btn_menu {
-  z-index: 200;
+  z-index: 10;
   display: block;
   position: absolute;
   top: 0;

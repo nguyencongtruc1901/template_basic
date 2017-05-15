@@ -1,7 +1,7 @@
 (function ($, win) {
   'use strict';
 
-  var Modal = $.modal = (function () {
+  var Lightbox = $.lightbox = (function () {
     var
 
       slideIndex = 0,
@@ -16,8 +16,7 @@
       $lightbox = $('.lightbox');
       $slides = $('.lightbox_slider_item');
       $modalContent = $('.lightbox_slider');
-      modal();
-      slideshow(slideIndex);
+      lightbox();
       paginationSlide();
     }
 
@@ -43,18 +42,20 @@
       });
     }
 
-    function modal() {
+    function lightbox() {
       $('.lightbox').each(function (index, el) {
         var $item = $(this).find('.lightbox_item');
         $item.on('click', function (e) {
-          e.preventDefault();
           var current = $(this).index();
+          slideIndex = current; // Set Current Item When CLick
+          slideshow(0);
+          e.preventDefault();
           $(this).stop().toggleClass('open');
           if($(this).hasClass('open')) {
             $(this).parent().next().addClass('lightbox_slider_show').find('.lightbox_slider_container').addClass('show');
             $('.lightbox_slider_overlay').fadeIn(300);
             $('body').append('<div class="lightbox_slider_overlay"></div>');
-            closeModal();
+            closeLightBox();
           } else {
             $(this).closest('html').find('.lightbox_slider.' + id).removeClass('lightbox_slider_show').find('.lightbox_slider_container').removeClass('show');
             $('.lightbox_slider_overlay').remove();
@@ -63,10 +64,9 @@
       });
     }
 
-    function closeModal() {
+    function closeLightBox() {
       $('.lightbox_slider_overlay').off().on('click', function (e) {
         e.preventDefault();
-        console.log(111111);
         $('.lightbox_item').removeClass('open');
         $modalContent.removeClass('lightbox_slider_show').find('.lightbox_slider_container').removeClass('show');
         $('.lightbox_slider_overlay').remove();
@@ -77,6 +77,6 @@
     };
 
   })();
-  $(Modal.init);
+  $(Lightbox.init);
 
 })(jQuery, window);
