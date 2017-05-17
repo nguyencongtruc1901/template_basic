@@ -4,6 +4,8 @@
   right: 0;
   display: inline-block;
   background: none;
+  width: auto;
+  background-color: transparent;
 }
 
 .main_visual {
@@ -76,6 +78,13 @@
 
 .slider_thumnail {
   margin: 0 auto;
+  background-color: transparent;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .slider_thumnail .swiper-pagination-bullet {
@@ -86,6 +95,7 @@
   opacity: 1;
   text-indent: -99999px;
   border: 2px solid #ffffff;
+  outline: none;
 }
 
 .slider_thumnail .swiper-pagination-bullet:nth-child(1) {
@@ -149,6 +159,10 @@
 
   .slider_item {
     position: relative;
+  }
+
+  .slider_item:not(.swiper-slide-active)::before {
+    display: none;
   }
 
   .slider_image {

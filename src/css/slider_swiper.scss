@@ -9,6 +9,8 @@
   right: 0;
   display: inline-block;
   background: none;
+  width: auto;
+  background-color: transparent;
 }
 .main_visual {
   position: relative;
@@ -64,10 +66,7 @@
       left: 20px;
     }
   }
-  @include device("tablet") {
-
-  }
-  @media screen and (max-width: 1024px)  {
+  @media screen and (max-width: $widthTablet)  {
     &_btn {
       width: 30px;
       height: 30px;
@@ -97,7 +96,7 @@
       position: relative;
       &:not(.swiper-slide-active) {
         &::before {
-          // display: none;
+          display: none;
         }
       }
     }
@@ -115,6 +114,10 @@
 }
 .slider_thumnail {
   margin: 0 auto;
+  background-color: transparent;
+  transform: none;
+  transition: none;
+  -webkit-tap-highlight-color: transparent;
   .swiper-pagination-bullet {
     width: 100px;
     border-radius: 0;
@@ -123,6 +126,7 @@
     opacity: 1;
     text-indent: -99999px;
     border: 2px solid $color-bg;
+    outline: none;
     &:nth-child(1) {
       background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide1) no-repeat 0 0;
     }
