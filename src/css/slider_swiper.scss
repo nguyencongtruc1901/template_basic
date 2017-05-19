@@ -15,9 +15,6 @@
 .main_visual {
   position: relative;
   overflow: hidden;
-  &_wrapper {
-    padding-bottom: 60px;
-  }
 }
 .slider {
   width: 960px;
@@ -112,50 +109,39 @@
     }
   }
 }
-.slider_thumnail {
+.slider_thumbnail {
+  padding-top: 20px;
   margin: 0 auto;
+  text-align: center;
   background-color: transparent;
   transform: none;
   transition: none;
   -webkit-tap-highlight-color: transparent;
-  .swiper-pagination-bullet {
-    width: 100px;
-    border-radius: 0;
-    height: 40px;
-    text-align: center;
-    opacity: 1;
-    text-indent: -99999px;
-    border: 2px solid $color-bg;
-    outline: none;
-    &:nth-child(1) {
-      background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide1) no-repeat 0 0;
+  &_item {
+    border: 2px solid $color-link;
+    display: inline-block;
+    width: 150px;
+    height: 60px;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0.5;
+    transition: all $transition-hover;
+    &:not(:first-child) {
+      margin-left: 10px;
     }
-    &:nth-child(2) {
-      background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide2) no-repeat 0 0;
+    img {
+      width: 100%;
+      height: auto;
     }
-    &:nth-child(3) {
-      background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide3) no-repeat 0 0;
-    }
-    &-active {
-      color: $color-bg;
+    &.is_active {
       border-color: $color-main;
+      opacity: 1;
     }
   }
   @include device("sp") {
-    .swiper-pagination-bullet {
+    &_item {
       width: 90px;
-      &:nth-child(1) {
-        background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide1) no-repeat 0 0;
-        background-size: 100% 100%;
-      }
-      &:nth-child(2) {
-        background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide2) no-repeat 0 0;
-        background-size: 100% 100%;
-      }
-      &:nth-child(3) {
-        background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide3) no-repeat 0 0;
-        background-size: 100% 100%;
-      }
+      height: 40px;
     }
   }
 }

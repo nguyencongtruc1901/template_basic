@@ -26,11 +26,11 @@
         centeredSlides: true,
         autoplayDisableOnInteraction: false,
         runCallbacksOnInit: true,
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        paginationBulletRender: function (swiper, index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
-        }
+      });
+
+      swiperThumbs(mySwiper, {
+        element: 'slider_thumbnail',
+        activeClass: 'is_active'
       });
 
       $('.slider_btn_next').click(function () {

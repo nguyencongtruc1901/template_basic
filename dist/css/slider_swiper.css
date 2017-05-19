@@ -13,10 +13,6 @@
   overflow: hidden;
 }
 
-.main_visual_wrapper {
-  padding-bottom: 60px;
-}
-
 .slider {
   width: 960px;
   overflow: visible;
@@ -76,8 +72,10 @@
   left: 20px;
 }
 
-.slider_thumnail {
+.slider_thumbnail {
+  padding-top: 20px;
   margin: 0 auto;
+  text-align: center;
   background-color: transparent;
   -webkit-transform: none;
       -ms-transform: none;
@@ -87,32 +85,30 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.slider_thumnail .swiper-pagination-bullet {
-  width: 100px;
-  border-radius: 0;
-  height: 40px;
-  text-align: center;
-  opacity: 1;
-  text-indent: -99999px;
-  border: 2px solid #ffffff;
-  outline: none;
+.slider_thumbnail_item {
+  border: 2px solid #0085e2;
+  display: inline-block;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.5;
+  -webkit-transition: all 0.3s cubic-bezier(0.13, 0.78, 0.38, 0.98);
+  transition: all 0.3s cubic-bezier(0.13, 0.78, 0.38, 0.98);
 }
 
-.slider_thumnail .swiper-pagination-bullet:nth-child(1) {
-  background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide1) no-repeat 0 0;
+.slider_thumbnail_item:not(:first-child) {
+  margin-left: 10px;
 }
 
-.slider_thumnail .swiper-pagination-bullet:nth-child(2) {
-  background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide2) no-repeat 0 0;
+.slider_thumbnail_item img {
+  width: 100%;
+  height: auto;
 }
 
-.slider_thumnail .swiper-pagination-bullet:nth-child(3) {
-  background: url(http://placehold.jp/eeeeee/3d4070/100x40.png?text=Slide3) no-repeat 0 0;
-}
-
-.slider_thumnail .swiper-pagination-bullet-active {
-  color: #ffffff;
+.slider_thumbnail_item.is_active {
   border-color: #1A237E;
+  opacity: 1;
 }
 
 @media screen and (max-width: 1024px) {
@@ -178,22 +174,8 @@
     right: 20px;
   }
 
-  .slider_thumnail .swiper-pagination-bullet {
+  .slider_thumbnail_item {
     width: 90px;
-  }
-
-  .slider_thumnail .swiper-pagination-bullet:nth-child(1) {
-    background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide1) no-repeat 0 0;
-    background-size: 100% 100%;
-  }
-
-  .slider_thumnail .swiper-pagination-bullet:nth-child(2) {
-    background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide2) no-repeat 0 0;
-    background-size: 100% 100%;
-  }
-
-  .slider_thumnail .swiper-pagination-bullet:nth-child(3) {
-    background: url(http://placehold.jp/eeeeee/3d4070/180x80.png?text=Slide3) no-repeat 0 0;
-    background-size: 100% 100%;
+    height: 40px;
   }
 }
